@@ -6,7 +6,7 @@ There's no exact timeline because things may take longer or shorter and thats ok
 
 - Aim for small scope
   - 5-10mins gameplay tops
-- brainstorming/concepts (no ideas is fine) take a full day to work out what we want to make
+- brainstorming/concepts take a full day to work out what we want to make
  - write everything down. We may come back to it later. This is a time for "yes and" instead of "no but"
 
 ### Phase 2 - Doing the Idea Dance
