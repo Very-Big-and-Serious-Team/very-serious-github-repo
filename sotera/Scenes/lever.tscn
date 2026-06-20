@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://ctimv56j7qqjo"]
-
-[ext_resource type="Script" uid="uid://ccqkywcjpdtt" path="res://Scripts/lever.gd" id="1_wv1st"]
-
-[node name="Lever" type="Node2D" unique_id=1796701312]
-script = ExtResource("1_wv1st")
