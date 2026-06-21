@@ -1,24 +1,62 @@
 extends Node2D
 
-var offset: float = 0.0;
+enum WHEELSTATE {
+	SPINNING,
+	IDLE
+}
 
-# Ideally we'll export those variables
-var spin_speed: float = 0.1;
-var values: Array[int] = [
+var state: WHEELSTATE = WHEELSTATE.IDLE;
+var offset: float = 0.0;
+var spin_speed: float = 0.0;
+var spin_time: float = 0.0;
+var min_speed: float = 0.1;
+var max_speed: float = 0.2;
+var min_time: float = 3.0;
+var max_time: float = 5.0;
+
+var speed_multiplier: float = 0.0;
+
+var items: Array[int] = [
 	5, 10, 15, 20, 25, 30
 ]
+var elapsed_spin_time = 0;
 
 func _process(delta: float) -> void:
-	offset += spin_speed;
-	offset = (int(offset * 1000000) % 1000000) / 1000000.0;
-	var single_value_height_in_texture = 1.0 / values.size();
-	var value_idx = (int(offset / single_value_height_in_texture) + 3) % values.size();
-	
+	if elapsed_spin_time < spin_time:
+		speed_multiplier = 1.0 - lerp(
+			0,
+			1,
+			TweenUtils.ease_out_quart(elapsed_spin_time / spin_time)
+		);
+
+		elapsed_spin_time += delta
+
+		offset += speed_multiplier;
+		offset = fmod(offset, 1.0);
+	else:
+		stop_spinning()
+		pass
+
+	var single_value_height_in_texture = 1.0 / items.size();
+	var value_idx = (int(offset / single_value_height_in_texture) + 3) % items.size();
+
 	$WheelTexture.material.set_shader_parameter("offset", offset);
-	$WheelTexture.material.set_shader_parameter("number_of_values", values.size());
+	$WheelTexture.material.set_shader_parameter("number_of_values", items.size());
 	$WheelTexture.material.set_shader_parameter("current_value", value_idx);
 
-	$WheelValue.text = str(values[value_idx])
-	
-	# TODO: Stop the spin after a while
-	pass
+	$WheelValue.text = str(items[value_idx])
+
+func _input(event):
+	if event.is_action_pressed("interact"):
+		start_spinning()
+
+func start_spinning():
+	if state == WHEELSTATE.IDLE:
+		state = WHEELSTATE.SPINNING
+		spin_speed = RandUtils.randf_range(min_speed, max_speed)
+		spin_time = RandUtils.randf_range(min_time,max_time)
+		elapsed_spin_time = 0
+
+func stop_spinning()->void:
+	if state == WHEELSTATE.SPINNING:
+		state = WHEELSTATE.IDLE
