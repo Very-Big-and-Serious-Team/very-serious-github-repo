@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bb46sijro0v5"]
 
-[ext_resource type="Script" uid="uid://bdjmgp7nghtmx" path="res://src/scripts/tanklikemovement.gd" id="1_nstdu"]
+[ext_resource type="Script" uid="uid://bdjmgp7nghtmx" path="res://src/scripts/tanklikemovement.gd" id="1_22nx3"]
 [ext_resource type="Texture2D" uid="uid://cj3r1dqn727p2" path="res://assets/animations/2d/Placeholder Assets/antanim.png" id="2_22nx3"]
+[ext_resource type="AudioStream" uid="uid://n7rvjv4now1c" path="res://assets/audio/sfx/joentnt-walk-on-grass-1-291984.mp3" id="3_t2wt0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13o5a"]
 atlas = ExtResource("2_22nx3")
@@ -99,7 +100,7 @@ height = 17.599998
 
 [node name="Player" type="CharacterBody2D" unique_id=74627888]
 scale = Vector2(10, 10)
-script = ExtResource("1_nstdu")
+script = ExtResource("1_22nx3")
 
 [node name="Animations" type="AnimatedSprite2D" parent="." unique_id=1905679505]
 sprite_frames = SubResource("SpriteFrames_al4r6")
@@ -109,5 +110,8 @@ frame_progress = 0.9586317
 [node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=976316957]
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_al4r6")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=486002323]
+stream = ExtResource("3_t2wt0")
 
 [connection signal="frame_changed" from="Animations" to="." method="_on_animations_frame_changed"]
