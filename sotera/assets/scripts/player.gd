@@ -1,0 +1,56 @@
+extends CharacterBody2D
+
+var speed = 500
+var lastvel = Vector2.ZERO
+
+#Starting screen parameters
+func _ready():
+	$Animations.play("forwardidle")
+	
+func player_movement():
+#player movement
+	var direction = Input.get_vector("left", "right", "up", "down")
+	velocity = direction * speed
+	if velocity != Vector2.ZERO:
+		lastvel = velocity
+	
+func idle_animation():
+	if lastvel.x == 0 and lastvel.y > 0:
+		$Animations.play("forwardidle")
+	if lastvel.x == 0 and lastvel.y < 0:
+		$Animations.play("backidle")
+	if lastvel.x > 0:
+		$Animations.play("rightidle")
+	if lastvel.x < 0:
+		$Animations.play("leftidle")
+		
+func movement_animation():
+	if velocity.x == 0 and velocity.y > 0:
+		$Animations.play("forwardrun")
+	elif velocity.x == 0 and velocity.y < 0:
+		$Animations.play("backrun")
+	elif velocity.x > 0:
+		$Animations.play("rightrun")
+	elif velocity.x < 0:
+		$Animations.play("leftrun")
+
+func _physics_process(delta):
+
+	player_movement()
+	
+	#player animations
+	if velocity == Vector2.ZERO:
+		idle_animation()
+
+	else:
+		movement_animation()
+		
+	move_and_slide()
+
+#frame perfect / footsteps
+func _on_animations_frame_changed():
+	if $Animations.animation in ["forwardrun", "leftrun", "rightrun", "backrun"]:
+		if $Animations.frame in [1, 4]:
+			$Footsteps.play()
+	else:
+		$Footsteps.stop()
