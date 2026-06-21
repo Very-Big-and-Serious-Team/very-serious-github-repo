@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xim7gid37jss"]
 
-[ext_resource type="PackedScene" uid="uid://bnekxchwnkwkm" path="res://assets/scenes/WheelSpin.tscn" id="1_25dwx"]
+[ext_resource type="PackedScene" uid="uid://hubowr5basua" path="res://assets/scenes/WheelSpin.tscn" id="1_25dwx"]
 
 [node name="Level0" type="Node2D" unique_id=1010563673]
 
