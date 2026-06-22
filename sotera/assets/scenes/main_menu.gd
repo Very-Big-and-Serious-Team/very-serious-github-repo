@@ -1,6 +1,6 @@
 extends Control
 
-@export var target_scene: String = "res://main_game.tscn"
+@export var target_scene: String
 
 func _on_play_pressed() -> void:
 	print("hello")
