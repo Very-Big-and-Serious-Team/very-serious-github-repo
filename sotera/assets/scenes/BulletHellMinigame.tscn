@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0nefrx30bpt0"]
+
+[ext_resource type="PackedScene" uid="uid://bv2h13u22og43" path="res://assets/prefabs/BulletHellGame/BulletHellCharacter.tscn" id="1_mouw8"]
+
+[node name="BulletHellMinigame" type="Node2D" unique_id=605887518]
+
+[node name="BulletHellCharacter" parent="." unique_id=770224643 instance=ExtResource("1_mouw8")]
+position = Vector2(948, 563)
