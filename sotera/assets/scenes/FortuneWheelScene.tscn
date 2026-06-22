@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b830mwodbpleq" path="res://assets/prefabs/player.tscn" id="3_cooqm"]
 [ext_resource type="Script" uid="uid://bu77csllncd31" path="res://src/scripts/dust_vfx.gd" id="4_nuidt"]
 [ext_resource type="Script" uid="uid://cee05bf1k1vhv" path="res://src/scripts/stage_exit_area.gd" id="5_8cy1c"]
+[ext_resource type="PackedScene" uid="uid://qxxqamx1koeu" path="res://assets/prefabs/ui/CRT.tscn" id="6_4arlo"]
 
 [sub_resource type="Curve" id="Curve_nuidt"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -117,3 +118,9 @@ offset_left = -178.37512
 offset_top = -213.0564
 offset_right = 96.62488
 offset_bottom = -100.0564
+
+[node name="User Interface" parent="." unique_id=719073563 instance=ExtResource("6_4arlo")]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 1912.0
+offset_bottom = 1092.0

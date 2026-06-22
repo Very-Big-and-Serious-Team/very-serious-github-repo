@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgsjlqp3a2lar"]
 
 [ext_resource type="PackedScene" uid="uid://b830mwodbpleq" path="res://assets/prefabs/player.tscn" id="1_v6fnw"]
+[ext_resource type="PackedScene" uid="uid://qxxqamx1koeu" path="res://assets/prefabs/ui/CRT.tscn" id="2_olgeh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r6e8m"]
 distance = 1.9999924
@@ -38,3 +39,9 @@ shape = SubResource("WorldBoundaryShape2D_r6e8m")
 position = Vector2(843, -38)
 rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_r6e8m")
+
+[node name="User Interface" parent="." unique_id=719073563 instance=ExtResource("2_olgeh")]
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 1924.0
+offset_bottom = 1088.0
