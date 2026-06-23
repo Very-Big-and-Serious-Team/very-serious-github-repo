@@ -30,6 +30,7 @@ uniform float vhs_strength : hint_range(0.0, 1.0);
 uniform float vhs_distortion;
 
 void fragment() {
+	vec2 center_x = vec2(0.5, 0.0);
 	
 	//warped_uv
 	vec2 centered_uv = SCREEN_UV * 2.0 - 1.0;
@@ -42,11 +43,11 @@ void fragment() {
 	
 	//scaledUV
 	float ratio = SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y;
-	vec2 scaledUV = (SCREEN_UV - vec2(0.5, 0.0)) / vec2(ratio, 1.0) + vec2(0.5, 0.0);
+	vec2 scaledUV = (SCREEN_UV - center_x) / vec2(ratio, 1.0) + center_x;
 	
 	//vignette UV shape 
 	vec2 circle_or_ellipse_uv = scaledUV * circle_or_ellipse + warped_uv * (1.0-circle_or_ellipse);
-	vec2 scaledCustomCenter = (custom_center - vec2(0.5, 0.0)) / vec2(ratio, 1.0) + vec2(0.5, 0.0);
+	vec2 scaledCustomCenter = (custom_center - center_x) / vec2(ratio, 1.0) + center_x;
 	vec2 circle_or_ellipse_center =  scaledCustomCenter * circle_or_ellipse + CENTER * (1.0-circle_or_ellipse);
 	
 	vec4 vignette_mask = texture(vignette_gradient, vec2(
