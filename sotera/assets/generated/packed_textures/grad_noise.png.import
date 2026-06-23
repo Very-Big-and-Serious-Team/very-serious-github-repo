@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coaud6y8nt031"
-path="res://.godot/imported/grad_noise.png-b5e316ac8a92331074d4b0c466568dd4.ctex"
+path="res://.godot/imported/grad_noise.png-daf03ec18fba03b708ea949e17795536.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raw/packed_textures/grad_noise.png"
-dest_files=["res://.godot/imported/grad_noise.png-b5e316ac8a92331074d4b0c466568dd4.ctex"]
+source_file="res://assets/generated/packed_textures/grad_noise.png"
+dest_files=["res://.godot/imported/grad_noise.png-daf03ec18fba03b708ea949e17795536.ctex"]
 
 [params]
 

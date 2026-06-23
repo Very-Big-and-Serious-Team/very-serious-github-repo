@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp2rphml3bdgd"
-path="res://.godot/imported/radial noise.png-631991fecc4d47293090a1d045638e0b.ctex"
+uid="uid://p3qdi7qf22xt"
+path="res://.godot/imported/noise.png-c683f0bb4e6b416e1255e9bb75e5a75f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raw/packed_textures/radial noise.png"
-dest_files=["res://.godot/imported/radial noise.png-631991fecc4d47293090a1d045638e0b.ctex"]
+source_file="res://assets/generated/packed_textures/noise.png"
+dest_files=["res://.godot/imported/noise.png-c683f0bb4e6b416e1255e9bb75e5a75f.ctex"]
 
 [params]
 

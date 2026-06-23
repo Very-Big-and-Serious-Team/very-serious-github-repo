@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://dti47853ke7qt" path="res://assets/shaders/space_distortion.gdshader" id="1_tg5gx"]
 [ext_resource type="Texture2D" path="res://Assets/generated/packed_textures/grad_noise.png" id="2_0ens2"]
-[ext_resource type="Texture2D" uid="uid://bp2rphml3bdgd" path="res://assets/raw/packed_textures/radial noise.png" id="3_u0nfl"]
+[ext_resource type="Texture2D" uid="uid://bp2rphml3bdgd" path="res://assets/generated/packed_textures/radial noise.png" id="3_u0nfl"]
 
 [resource]
 shader = ExtResource("1_tg5gx")
