@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://cfup3wpvc4r5a" path="res://assets/shaders/WheelSpin.gdshader" id="2_cdcth"]
 [ext_resource type="Texture2D" uid="uid://ch5qgxqjmwbc5" path="res://assets/images/Arrow 1.png" id="4_5fd0l"]
 [ext_resource type="Texture2D" uid="uid://cxll6mipim1jw" path="res://assets/images/wheel.png" id="5_7ort1"]
+[ext_resource type="PackedScene" uid="uid://hfxe3mld5eal" path="res://assets/prefabs/ParticleEffect.tscn" id="6_2ii04"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1cqo2"]
 shader = ExtResource("2_cdcth")
@@ -33,3 +34,6 @@ horizontal_alignment = 1
 position = Vector2(45, 6)
 scale = Vector2(6.56383, 6.56383)
 texture = ExtResource("5_7ort1")
+
+[node name="ParticleEffect" parent="." unique_id=1160851600 instance=ExtResource("6_2ii04")]
+position = Vector2(2, -287)

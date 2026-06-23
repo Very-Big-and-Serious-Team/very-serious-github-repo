@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://qxxqamx1koeu" path="res://assets/prefabs/ui/CRT.tscn" id="6_4arlo"]
 [ext_resource type="Texture2D" uid="uid://scsxnpxytqir" path="res://assets/images/curtains.png" id="7_4fco3"]
 [ext_resource type="PackedScene" uid="uid://ctimv56j7qqjo" path="res://assets/prefabs/lever.tscn" id="7_cooqm"]
-[ext_resource type="PackedScene" uid="uid://hfxe3mld5eal" path="res://assets/prefabs/ParticleEffect.tscn" id="8_4fco3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t6tgv"]
 distance = 3.9999962
@@ -22,10 +21,11 @@ position = Vector2(960.2221, 540.75006)
 scale = Vector2(6.0027785, 6.0027785)
 texture = ExtResource("1_cooqm")
 
-[node name="WheelSpin" parent="." unique_id=1465385523 instance=ExtResource("2_4arlo")]
+[node name="Wheel" parent="." unique_id=1465385523 instance=ExtResource("2_4arlo")]
 position = Vector2(948, 544)
 
 [node name="worldboundary" type="Node2D" parent="." unique_id=1162189176]
+visible = false
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="worldboundary" unique_id=133051340]
 
@@ -73,9 +73,6 @@ offset_bottom = -100.0564
 [node name="Lever" parent="." unique_id=1796701312 instance=ExtResource("7_cooqm")]
 position = Vector2(1462, 796)
 
-[node name="ParticleEffect" parent="." unique_id=1160851600 instance=ExtResource("8_4fco3")]
-position = Vector2(350, 474)
-
 [node name="Player" parent="." unique_id=1229557920 instance=ExtResource("3_cooqm")]
 position = Vector2(1812, 814)
 
@@ -85,6 +82,7 @@ scale = Vector2(5.972222, 5.972222)
 texture = ExtResource("7_4fco3")
 
 [node name="CRT" parent="." unique_id=719073563 instance=ExtResource("6_4arlo")]
+visible = false
 offset_left = -0.99993896
 offset_top = 1.000061
 offset_right = 1912.0002
