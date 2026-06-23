@@ -48,16 +48,6 @@ mouse_filter = 2
 texture = ExtResource("3_sphea")
 
 [node name="CRT" parent="." unique_id=719073563 instance=ExtResource("3_0ntwq")]
-unique_name_in_owner = true
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 6.0
-offset_top = -1.0
-offset_right = 1917.0
-offset_bottom = 1078.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

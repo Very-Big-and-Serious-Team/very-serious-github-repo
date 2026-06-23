@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 500
 var lastvel = Vector2.ZERO
 
-@onready var dust_vfx = $Dust
+@onready var dust_vfx = $DustVfx
 
 #Starting screen parameters
 func _ready():

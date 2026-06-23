@@ -19,6 +19,9 @@ var stop_timer: float = 0.0
 func _ready() -> void:
 	#Start hidden
 	visible = false
+	darkest_dust.emitting = false
+	mid_dust.emitting = false
+	lightest_dust.emitting = false
 	current_state = DustState.NO_PARTICLES
 	
 	if darkest_dust: max_lifetime = max(max_lifetime,darkest_dust.lifetime)
@@ -40,6 +43,9 @@ func _on_player_start_moving()	-> void:
 		
 	current_state = DustState.SPAWNING_PARTICLES
 	visible = true
+	darkest_dust.emitting = true
+	mid_dust.emitting = true
+	lightest_dust.emitting = true
 	stop_timer = 0.0
 		
 	_randomize_and_play(darkest_dust)

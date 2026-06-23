@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://hfxe3mld5eal"]
+
+[sub_resource type="Gradient" id="Gradient_4jsy0"]
+offsets = PackedFloat32Array(0.20251396, 0.36731842, 0.5684357, 0.78351957)
+colors = PackedColorArray(1, 0.54509807, 0.47843137, 1, 1, 1, 1, 0, 1, 0.54509807, 0.47843137, 1, 1, 0.54509807, 0.47843137, 0)
+
+[sub_resource type="Gradient" id="Gradient_21ecv"]
+offsets = PackedFloat32Array(0.1829609, 0.37011173, 0.5460894, 0.78910613)
+colors = PackedColorArray(1.347661e-06, 0.87553775, 0.8064471, 1, 1, 1, 1, 0, 0, 0.8745098, 0.80784315, 1, 1, 0.8745098, 0.80784315, 0)
+
+[node name="ParticleEffect" type="Node2D" unique_id=1160851600]
+
+[node name="smallPE" type="CPUParticles2D" parent="." unique_id=1044738356]
+position = Vector2(-1, -1)
+amount = 16
+lifetime = 3.0
+lifetime_randomness = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(49.27, 1)
+direction = Vector2(0, -1)
+spread = 50.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 75.0
+initial_velocity_max = 150.0
+angular_velocity_min = 50.0
+angular_velocity_max = 200.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(1, 0.54376775, 0.4794641, 1)
+color_ramp = SubResource("Gradient_4jsy0")
+
+[node name="bigPE" type="CPUParticles2D" parent="." unique_id=831542250]
+position = Vector2(-1, -1)
+lifetime = 4.0
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(49.27, 1)
+direction = Vector2(0, -1)
+spread = 50.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 75.0
+initial_velocity_max = 150.0
+angular_velocity_min = 50.0
+angular_velocity_max = 200.0
+scale_amount_min = 6.0
+scale_amount_max = 12.0
+color = Color(0, 0.7367687, 0.67815554, 1)
+color_ramp = SubResource("Gradient_21ecv")
