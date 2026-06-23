@@ -37,9 +37,13 @@ shader_parameter/vhs_change_speed = 0.005
 shader_parameter/vhs_scroll_speed = -0.1
 shader_parameter/vhs_strength = 0.1410000066975
 shader_parameter/vhs_distortion = 0.75
+shader_parameter/pivot = Vector2(0.5, 0.54)
+shader_parameter/color_pivot = Color(1, 1, 1, 1)
+shader_parameter/color_edge = Color(0.0754, 0.08359, 0.13, 0.62352943)
+shader_parameter/max_distance = 0.8
 
 [sub_resource type="Animation" id="Animation_1cwdj"]
-length = 0.001
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

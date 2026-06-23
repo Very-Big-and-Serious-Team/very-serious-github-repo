@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bspvdkhxsqjvs"
-path="res://.godot/imported/JS1_HandL.png-69c76174d4d3cf53000e281507b5967b.ctex"
+uid="uid://x21j3i1dnuol"
+path="res://.godot/imported/JS1_HandR (1).png-2757413f472e508ab192301a251cad6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raw/2d/vector/jumpscare/JS1_HandL.png"
-dest_files=["res://.godot/imported/JS1_HandL.png-69c76174d4d3cf53000e281507b5967b.ctex"]
+source_file="res://assets/raw/2d/vector/jumpscare/JS1_HandR (1).png"
+dest_files=["res://.godot/imported/JS1_HandR (1).png-2757413f472e508ab192301a251cad6f.ctex"]
 
 [params]
 

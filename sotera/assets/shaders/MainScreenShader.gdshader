@@ -29,7 +29,27 @@ uniform float vhs_scroll_speed;
 uniform float vhs_strength : hint_range(0.0, 1.0);
 uniform float vhs_distortion;
 
+// ----- inkscape gradient multiply  -----
+group_uniforms InkscapeMultiply;
+uniform vec2 pivot;
+uniform vec4 color_pivot: source_color;
+uniform vec4 color_edge: source_color;
+uniform float max_distance = 0.8;
+// ----- inkscape gradient multiply  -----
+
+vec4 gradient(vec2 uv){
+    float dist = distance(uv, pivot);
+    float a = min(dist / max_distance, 1.);
+    return mix(color_pivot, color_edge, a);
+}
+
+vec3 inkspace_multiply(vec3 base, vec2 uv){
+	vec4 grad = gradient(uv);
+	return mix(base, base * grad.rgb, grad.a);
+}
+
 void fragment() {
+	vec2 center_x = vec2(0.5, 0.0);
 	
 	//warped_uv
 	vec2 centered_uv = SCREEN_UV * 2.0 - 1.0;
@@ -42,11 +62,11 @@ void fragment() {
 	
 	//scaledUV
 	float ratio = SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y;
-	vec2 scaledUV = (SCREEN_UV - vec2(0.5, 0.0)) / vec2(ratio, 1.0) + vec2(0.5, 0.0);
+	vec2 scaledUV = (SCREEN_UV - center_x) / vec2(ratio, 1.0) + center_x;
 	
 	//vignette UV shape 
 	vec2 circle_or_ellipse_uv = scaledUV * circle_or_ellipse + warped_uv * (1.0-circle_or_ellipse);
-	vec2 scaledCustomCenter = (custom_center - vec2(0.5, 0.0)) / vec2(ratio, 1.0) + vec2(0.5, 0.0);
+	vec2 scaledCustomCenter = (custom_center - center_x) / vec2(ratio, 1.0) + center_x;
 	vec2 circle_or_ellipse_center =  scaledCustomCenter * circle_or_ellipse + CENTER * (1.0-circle_or_ellipse);
 	
 	vec4 vignette_mask = texture(vignette_gradient, vec2(
@@ -72,6 +92,8 @@ void fragment() {
 	
 	//final color
 	vec4 screen_color = texture(screen_texture, warped_uv + vec2(vhs_mask * 0.005 * vhs_distortion,0.0));
-	COLOR = screen_color * vignette_mask 
-	* vec4(vec3(warp_mask), 1.0) + scanline_mask + static_overlay;
+	vec4 crt_vhs_color = screen_color * vignette_mask * vec4(vec3(warp_mask), 1.0) + scanline_mask + static_overlay;
+	
+	vec3 ink_mult = inkspace_multiply(crt_vhs_color.rgb, UV);
+	COLOR = vec4(ink_mult, 1.0);
 }

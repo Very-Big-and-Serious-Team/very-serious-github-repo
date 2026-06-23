@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p6iouy1yl0ec"
-path="res://.godot/imported/JS1_Hands.png-6b8246af565f5de9eb0254905f60f111.ctex"
+uid="uid://ctu71o17hwtoo"
+path="res://.godot/imported/lever_ani.png-e88d8277c50566c388562b43e0ebc315.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raw/2d/vector/jumpscare/JS1_Hands.png"
-dest_files=["res://.godot/imported/JS1_Hands.png-6b8246af565f5de9eb0254905f60f111.ctex"]
+source_file="res://assets/animations/2d/lever_ani.png"
+dest_files=["res://.godot/imported/lever_ani.png-e88d8277c50566c388562b43e0ebc315.ctex"]
 
 [params]
 

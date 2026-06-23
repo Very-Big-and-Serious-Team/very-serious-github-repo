@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bamv8gdsaa207"
-path="res://.godot/imported/JS1_Head.png-8af508250615460373e5b7c28477c668.ctex"
+uid="uid://dhwy3baf5dqcl"
+path="res://.godot/imported/spinner.png-2ffd1190fa244991cab5f8c2a16e6024.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raw/2d/vector/jumpscare/JS1_Head.png"
-dest_files=["res://.godot/imported/JS1_Head.png-8af508250615460373e5b7c28477c668.ctex"]
+source_file="res://assets/raw/2d/pixel/scene/fortune_wheel/spinner.png"
+dest_files=["res://.godot/imported/spinner.png-2ffd1190fa244991cab5f8c2a16e6024.ctex"]
 
 [params]
 
