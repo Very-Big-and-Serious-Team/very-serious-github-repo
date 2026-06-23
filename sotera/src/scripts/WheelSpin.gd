@@ -35,7 +35,6 @@ func _process(delta: float) -> void:
 		offset = fmod(offset, 1.0);
 	else:
 		stop_spinning()
-		pass
 
 	var single_value_height_in_texture = 1.0 / items.size();
 	var value_idx = (int(offset / single_value_height_in_texture) + (items.size()/2)) % items.size();
@@ -56,7 +55,9 @@ func start_spinning():
 		spin_speed = RandUtils.randf_range(min_speed, max_speed)
 		spin_time = RandUtils.randf_range(min_time,max_time)
 		elapsed_spin_time = 0
+		$WheelParticleEffect.start_speedup()
 
 func stop_spinning()->void:
 	if state == WHEELSTATE.SPINNING:
 		state = WHEELSTATE.IDLE
+		$WheelParticleEffect.start_slowdown()
