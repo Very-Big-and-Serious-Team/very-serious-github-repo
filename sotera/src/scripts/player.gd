@@ -3,10 +3,12 @@ extends CharacterBody2D
 var speed = 500
 var lastvel = Vector2.ZERO
 
+@onready var dust_vfx = $Dust
+
 #Starting screen parameters
 func _ready():
 	$Animations.play("forwardidle")
-	
+
 func player_movement():
 #player movement
 	var direction = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -34,16 +36,17 @@ func movement_animation():
 	elif velocity.x < 0:
 		$Animations.play("leftrun")
 
-func _physics_process(delta):
-
+func _physics_process(_delta):
 	player_movement()
 	
-	#player animations
 	if velocity == Vector2.ZERO:
 		idle_animation()
-
+		if dust_vfx:
+			dust_vfx._on_player_stop_moving()
 	else:
 		movement_animation()
+		if dust_vfx:
+			dust_vfx._on_player_start_moving()
 		
 	move_and_slide()
 
@@ -52,6 +55,5 @@ func _on_animations_frame_changed():
 	if $Animations.animation in ["forwardrun", "leftrun", "rightrun", "backrun"]:
 		if $Animations.frame in [0, 4]:
 			$Footsteps.play()
-			
 	else:
 		$Footsteps.stop()

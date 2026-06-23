@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://crgbqad7i7i2t"]
+
+[ext_resource type="Script" uid="uid://cx5tpa5lgwidh" path="res://src/scripts/JumpScare.gd" id="1_050a5"]
+[ext_resource type="Texture2D" uid="uid://0665qrli4jg7" path="res://assets/raw/2d/vector/jumpscare1.png" id="2_f5mll"]
+[ext_resource type="AudioStream" uid="uid://cpyw8qldtloig" path="res://assets/audio/voice/dialogue/voices calling player.wav" id="3_7i03j"]
+
+[node name="JumpScare" type="Node2D" unique_id=1394096082]
+script = ExtResource("1_050a5")
+
+[node name="Jumpscare1" type="Sprite2D" parent="." unique_id=598095111]
+visible = false
+position = Vector2(960, 535)
+texture = ExtResource("2_f5mll")
+
+[node name="VoicesCallingPlayer" type="AudioStreamPlayer" parent="." unique_id=47924559]
+stream = ExtResource("3_7i03j")
+volume_db = -0.842

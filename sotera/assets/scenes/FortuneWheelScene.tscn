@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bbqcbyvycwqrr"]
+
+[ext_resource type="Texture2D" uid="uid://n3ucyq26j0qu" path="res://assets/raw/wheel-scene/stage.png" id="1_cooqm"]
+[ext_resource type="PackedScene" uid="uid://hubowr5basua" path="res://assets/prefabs/Wheel.tscn" id="2_4arlo"]
+[ext_resource type="PackedScene" uid="uid://b830mwodbpleq" path="res://assets/prefabs/player.tscn" id="3_cooqm"]
+[ext_resource type="Script" uid="uid://cee05bf1k1vhv" path="res://src/scripts/stage_exit_area.gd" id="5_8cy1c"]
+[ext_resource type="PackedScene" uid="uid://qxxqamx1koeu" path="res://assets/prefabs/ui/CRT.tscn" id="6_4arlo"]
+[ext_resource type="Texture2D" uid="uid://scsxnpxytqir" path="res://assets/raw/wheel-scene/curtains.png" id="7_4fco3"]
+[ext_resource type="PackedScene" uid="uid://ctimv56j7qqjo" path="res://assets/prefabs/lever.tscn" id="7_cooqm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t6tgv"]
+distance = 3.9999962
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k25l"]
+size = Vector2(1920.5, 199.5)
+
+[node name="Root" type="Node2D" unique_id=953526698]
+
+[node name="Stage" type="Sprite2D" parent="." unique_id=969645194]
+position = Vector2(960.2221, 540.75006)
+scale = Vector2(6.0027785, 6.0027785)
+texture = ExtResource("1_cooqm")
+
+[node name="Wheel" parent="." unique_id=1465385523 instance=ExtResource("2_4arlo")]
+position = Vector2(948, 544)
+
+[node name="worldboundary" type="Node2D" parent="." unique_id=1162189176]
+visible = false
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="worldboundary" unique_id=133051340]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="worldboundary/StaticBody2D4" unique_id=896232653]
+position = Vector2(887, 1128)
+shape = SubResource("WorldBoundaryShape2D_t6tgv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="worldboundary" unique_id=973391984]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="worldboundary/StaticBody2D" unique_id=102201382]
+position = Vector2(-91, 508)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_t6tgv")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="worldboundary" unique_id=122644830]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="worldboundary/StaticBody2D3" unique_id=332451517]
+position = Vector2(1968, 467)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_t6tgv")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="worldboundary" unique_id=231815583]
+position = Vector2(80, 632)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="worldboundary/StaticBody2D2" unique_id=269391746]
+position = Vector2(843, -38)
+rotation = -3.1415925
+shape = SubResource("WorldBoundaryShape2D_t6tgv")
+
+[node name="stage-exit-area" type="Area2D" parent="." unique_id=935960045]
+position = Vector2(1790.3751, 890.0564)
+collision_mask = 2
+script = ExtResource("5_8cy1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stage-exit-area" unique_id=1553963211]
+position = Vector2(-837.1251, 198.1936)
+shape = SubResource("RectangleShape2D_3k25l")
+
+[node name="DisplayControls" type="RichTextLabel" parent="stage-exit-area" unique_id=1089995010]
+offset_left = -178.37512
+offset_top = -213.0564
+offset_right = 96.62488
+offset_bottom = -100.0564
+
+[node name="Lever" parent="." unique_id=1796701312 instance=ExtResource("7_cooqm")]
+position = Vector2(1462, 796)
+
+[node name="Player" parent="." unique_id=1229557920 instance=ExtResource("3_cooqm")]
+position = Vector2(1812, 814)
+
+[node name="Curtains" type="Sprite2D" parent="." unique_id=965856818]
+position = Vector2(951, 538)
+scale = Vector2(5.972222, 5.972222)
+texture = ExtResource("7_4fco3")
+
+[node name="CRT" parent="." unique_id=719073563 instance=ExtResource("6_4arlo")]
+offset_left = -0.99993896
+offset_top = 1.000061
+offset_right = 1912.0002
+offset_bottom = 1092.0

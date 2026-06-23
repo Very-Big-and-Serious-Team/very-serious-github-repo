@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d8nawdwbiqfy"]
+
+[ext_resource type="Script" uid="uid://k3jk0q42jwl8" path="res://src/scripts/theater.gd" id="1_mfrm5"]
+[ext_resource type="Script" uid="uid://dtbnowovcmjha" path="res://src/scripts/cheering_charater_spawner.gd" id="3_e6mfd"]
+[ext_resource type="PackedScene" uid="uid://c5jaxqi15oix3" path="res://assets/prefabs/cheering_character.tscn" id="4_3rdx2"]
+
+[node name="Theater" type="Node2D" unique_id=121237618]
+script = ExtResource("1_mfrm5")
+
+[node name="CheeringCharaterSpawner" type="Node2D" parent="." unique_id=930879713]
+script = ExtResource("3_e6mfd")
+cheering_character_scene = ExtResource("4_3rdx2")
+min_wait_time = 10
+max_wait_time = 20
+min_starters_cheering = 10
+max_starters_cheering = 20
+
+[node name="Timer" type="Timer" parent="CheeringCharaterSpawner" unique_id=181907599]
+wait_time = 0.1
+autostart = true

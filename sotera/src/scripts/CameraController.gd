@@ -28,3 +28,4 @@ func _process(delta: float) -> void:
 	zoom = base_zoom + motion_params["scale"]
 	offset = base_offset + motion_params["offset"]
 	rotation = base_rotation + motion_params["rotation"]
+	

@@ -1,0 +1,12 @@
+[gd_resource type="FontVariation" format=3 uid="uid://4ct702o11jjv"]
+
+[ext_resource type="FontFile" uid="uid://cwbt4fgf27yh7" path="res://assets/fonts/MGPixel.otf" id="1_lrr7a"]
+
+[resource]
+base_font = ExtResource("1_lrr7a")
+variation_opentype = {
+0: 1
+}
+opentype_features = {
+1667329140: 0
+}
