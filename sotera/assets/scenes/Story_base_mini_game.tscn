@@ -5,23 +5,16 @@
 
 [sub_resource type="Resource" id="Resource_exq10"]
 script = ExtResource("2_fp283")
-question = "dfsfd"
-option_a = "okfo"
-option_b = "fg"
-option_c = "cv"
-option_d = "gf"
-answer = 1
+question = "what is your name? "
+option_a = "max"
+option_b = "jony"
+option_c = "skf"
+option_d = "fdg"
+answer = 2
 metadata/_custom_type_script = "uid://dhvvpocki0fx6"
 
-[sub_resource type="Resource" id="Resource_fp283"]
-script = ExtResource("2_fp283")
-question = "dsf"
-option_a = "sdf"
-option_b = "sdf"
-option_c = "sdf"
-option_d = "sf"
-answer = 3
-metadata/_custom_type_script = "uid://dhvvpocki0fx6"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exq10"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Quiz" type="Control" unique_id=1003106105]
 layout_mode = 3
@@ -31,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_exq10")
-questions = Array[ExtResource("2_fp283")]([SubResource("Resource_exq10"), SubResource("Resource_fp283")])
+questions = Array[ExtResource("2_fp283")]([SubResource("Resource_exq10")])
 
 [node name="Options" type="HBoxContainer" parent="." unique_id=456823301]
 layout_mode = 1
@@ -47,17 +40,6 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Options" unique_id=1788676075]
-layout_mode = 2
-
-[node name="OptionA" type="Button" parent="Options/VBoxContainer" unique_id=332922336]
-custom_minimum_size = Vector2(150, 40)
-layout_mode = 2
-
-[node name="OptionB" type="Button" parent="Options/VBoxContainer" unique_id=1600226423]
-custom_minimum_size = Vector2(150, 40)
-layout_mode = 2
-
 [node name="VBoxContainer2" type="VBoxContainer" parent="Options" unique_id=524748411]
 layout_mode = 2
 
@@ -69,7 +51,19 @@ layout_mode = 2
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Options" unique_id=1788676075]
+layout_mode = 2
+
+[node name="OptionA" type="Button" parent="Options/VBoxContainer" unique_id=332922336]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+
+[node name="OptionB" type="Button" parent="Options/VBoxContainer" unique_id=1600226423]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+
 [node name="QuestionLabel" type="Label" parent="." unique_id=247042899]
+custom_minimum_size = Vector2(350, 150)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -79,8 +73,10 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_exq10")
+horizontal_alignment = 1
 
-[connection signal="pressed" from="Options/VBoxContainer/OptionA" to="." method="_on_option_a_pressed"]
-[connection signal="pressed" from="Options/VBoxContainer/OptionB" to="." method="_on_option_b_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer2/OptionC" to="." method="_on_option_c_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer2/OptionD" to="." method="_on_option_d_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/OptionA" to="." method="_on_option_a_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/OptionB" to="." method="_on_option_b_pressed"]
