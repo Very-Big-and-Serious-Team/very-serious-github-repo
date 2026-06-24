@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://dgsjlqp3a2lar"]
 
 [ext_resource type="PackedScene" uid="uid://b830mwodbpleq" path="res://assets/prefabs/player.tscn" id="1_v6fnw"]
+[ext_resource type="PackedScene" uid="uid://qxxqamx1koeu" path="res://assets/prefabs/ui/CRT.tscn" id="2_olgeh"]
+[ext_resource type="PackedScene" uid="uid://urcx0ou3hqip" path="res://assets/prefabs/contract.tscn" id="3_alw0s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r6e8m"]
 distance = 1.9999924
 
 [node name="StandardMaze" type="Node2D" unique_id=1981291008]
-
-[node name="Player" parent="." unique_id=1229557920 instance=ExtResource("1_v6fnw")]
-position = Vector2(956, 563)
 
 [node name="worldboundary" type="Node2D" parent="." unique_id=76895251]
 
@@ -38,3 +37,17 @@ shape = SubResource("WorldBoundaryShape2D_r6e8m")
 position = Vector2(843, -38)
 rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_r6e8m")
+
+[node name="Contract" parent="." unique_id=2146452445 instance=ExtResource("3_alw0s")]
+position = Vector2(1549, 589)
+
+[node name="Player" parent="." unique_id=1229557920 instance=ExtResource("1_v6fnw")]
+position = Vector2(956, 563)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1126292774]
+
+[node name="CRT" parent="CanvasLayer" unique_id=719073563 instance=ExtResource("2_olgeh")]
+offset_left = 24.0
+offset_top = -3.0
+offset_right = 1941.0
+offset_bottom = 1087.0

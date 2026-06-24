@@ -17,10 +17,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TransitionScene="*uid://be2iih16ss0nx"
+Events="*uid://dpv8uw8ip271l"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -136,3 +139,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.14, 0.05016667, 0.042000003, 1)

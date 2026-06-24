@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://m03c8gghqx32"]
+
+[ext_resource type="Texture2D" uid="uid://bdngkaf23ubev" path="res://assets/raw/Steven Spin.png" id="1_eybjq"]
+[ext_resource type="Script" uid="uid://bcijj14jimlhi" path="res://src/scripts/steven.gd" id="1_mo7w4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo7w4"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(0, 0, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t44wf"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(120, 0, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ops5"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(240, 0, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q73m3"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(360, 0, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7v6d"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(480, 0, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eybjq"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(0, 252, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf24c"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(120, 336, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmv4w"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(0, 84, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1kwr"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(120, 84, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t20mw"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(240, 84, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jk0w"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(360, 84, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgkfi"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(480, 84, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa1vd"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(0, 168, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyqct"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(120, 168, 120, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skt6j"]
+atlas = ExtResource("1_eybjq")
+region = Rect2(240, 168, 120, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6e8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo7w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t44wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ops5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q73m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7v6d")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eybjq")
+}],
+"loop": 1,
+"name": &"finger_guns",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf24c")
+}],
+"loop": 1,
+"name": &"laugh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmv4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1kwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t20mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jk0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgkfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa1vd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyqct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skt6j")
+}],
+"loop": 1,
+"name": &"nothing_in_pockets",
+"speed": 5.0
+}]
+
+[node name="Steven" type="Node2D" unique_id=2100930359]
+scale = Vector2(4, 4)
+script = ExtResource("1_mo7w4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1742904316]
+offset_left = -21.5
+offset_top = 33.0
+offset_right = 23.75
+offset_bottom = 54.0
+color = Color(0, 0, 0, 0.5372549)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1276923601]
+sprite_frames = SubResource("SpriteFrames_r6e8m")
+autoplay = "default"
+frame_progress = 0.32474864
