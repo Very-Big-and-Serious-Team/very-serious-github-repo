@@ -14,6 +14,9 @@ var question_index: int = 0
 
 func _ready() -> void:
 	num_of_question = questions.size()
+	if num_of_question == 0:
+		return
+
 	curent_question = questions[question_index]
 	question_label.text = curent_question.question
 	option_a.text = curent_question.option_a
@@ -41,20 +44,22 @@ func _on_option_a_pressed() -> void:
 	else:
 		print("you are wrong")
 		on_wrong_answer()
+
 	move_to_next_question()
 
 func _on_option_b_pressed() -> void:
-	if curent_question.answer == 1:
+	if curent_question.answer == 2:
 		print("your are right")
 		on_right_answer()
 	else:
 		print("you are wrong")
 		on_wrong_answer()
+
 	move_to_next_question()
 
 
 func _on_option_c_pressed() -> void:
-	if curent_question.answer == 1:
+	if curent_question.answer == 3:
 		print("your are right")
 		on_right_answer()
 	else:
@@ -64,7 +69,7 @@ func _on_option_c_pressed() -> void:
 
 
 func _on_option_d_pressed() -> void:
-	if curent_question.answer == 1:
+	if curent_question.answer == 4:
 		print("your are right")
 		on_right_answer()
 	else:

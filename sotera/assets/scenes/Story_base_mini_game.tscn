@@ -1,6 +1,27 @@
 [gd_scene format=3 uid="uid://jpbqy8yj1ams"]
 
 [ext_resource type="Script" uid="uid://bcmqoo5apovda" path="res://src/scripts/story_base_mini_game.gd" id="1_exq10"]
+[ext_resource type="Script" uid="uid://dhvvpocki0fx6" path="res://src/scripts/question.gd" id="2_fp283"]
+
+[sub_resource type="Resource" id="Resource_exq10"]
+script = ExtResource("2_fp283")
+question = "dfsfd"
+option_a = "okfo"
+option_b = "fg"
+option_c = "cv"
+option_d = "gf"
+answer = 1
+metadata/_custom_type_script = "uid://dhvvpocki0fx6"
+
+[sub_resource type="Resource" id="Resource_fp283"]
+script = ExtResource("2_fp283")
+question = "dsf"
+option_a = "sdf"
+option_b = "sdf"
+option_c = "sdf"
+option_d = "sf"
+answer = 3
+metadata/_custom_type_script = "uid://dhvvpocki0fx6"
 
 [node name="Quiz" type="Control" unique_id=1003106105]
 layout_mode = 3
@@ -10,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_exq10")
+questions = Array[ExtResource("2_fp283")]([SubResource("Resource_exq10"), SubResource("Resource_fp283")])
 
 [node name="Options" type="HBoxContainer" parent="." unique_id=456823301]
 layout_mode = 1
