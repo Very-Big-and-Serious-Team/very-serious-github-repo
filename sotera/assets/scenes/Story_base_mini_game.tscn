@@ -10,7 +10,6 @@ option_a = "max"
 option_b = "jony"
 option_c = "skf"
 option_d = "fdg"
-answer = 2
 metadata/_custom_type_script = "uid://dhvvpocki0fx6"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exq10"]
