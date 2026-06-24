@@ -13,6 +13,7 @@ var curent_question: Question
 var question_index: int = 0
 
 func _ready() -> void:
+	option_a.grab_focus()
 	num_of_question = questions.size()
 	if num_of_question == 0:
 		return
