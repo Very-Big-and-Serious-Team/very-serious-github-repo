@@ -10,12 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://ctimv56j7qqjo" path="res://assets/prefabs/lever.tscn" id="7_cooqm"]
 [ext_resource type="PackedScene" uid="uid://bwav05t3mcd2k" path="res://assets/prefabs/curtain_prefab.tscn" id="8_dsjn4"]
 [ext_resource type="PackedScene" uid="uid://c7kga4lmflwpr" path="res://assets/prefabs/ui/stage_player.tscn" id="9_8cy1c"]
+[ext_resource type="PackedScene" uid="uid://dmi2oqodqjn68" path="res://assets/prefabs/mini_game_tracker.tscn" id="11_cl5pl"]
+[ext_resource type="Script" uid="uid://bhqfew7feq5tr" path="res://src/scripts/MiniGameTracker.gd" id="12_wipld"]
+[ext_resource type="Texture2D" uid="uid://bs33hui6wy3e7" path="res://assets/raw/wheel-scene/fortune_wheel/wheel_icon_maze.png" id="13_6vnka"]
+[ext_resource type="Script" uid="uid://csvkyipwsqote" path="res://src/scripts/Dialogues/UIText.gd" id="13_wipld"]
+[ext_resource type="Texture2D" uid="uid://c6efpemuy42tc" path="res://assets/raw/wheel-scene/fortune_wheel/wheel_icon_bullets.png" id="14_4tcif"]
+[ext_resource type="Texture2D" uid="uid://cllxxawp4bkrl" path="res://assets/raw/wheel-scene/fortune_wheel/wheel_icon_quiz.png" id="15_0wqvk"]
+[ext_resource type="Texture2D" uid="uid://do1jnfte64gyp" path="res://assets/raw/wheel-scene/fortune_wheel/wheel_icon_scary.png" id="16_83ar3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t6tgv"]
 distance = 3.9999962
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3k25l"]
 size = Vector2(1920.5, 199.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vda6"]
 
 [node name="Root" type="Node" unique_id=21760760 node_paths=PackedStringArray("curtains")]
 script = ExtResource("1_4x113")
@@ -26,9 +35,10 @@ position = Vector2(960.0001, 544)
 scale = Vector2(6.0027785, 6.0027785)
 texture = ExtResource("1_cooqm")
 
-[node name="Wheel" parent="." unique_id=1465385523 node_paths=PackedStringArray("curtains") instance=ExtResource("2_4arlo")]
+[node name="Wheel" parent="." unique_id=1465385523 node_paths=PackedStringArray("curtains", "minigame_tracker") instance=ExtResource("2_4arlo")]
 position = Vector2(950, 836)
 curtains = NodePath("../Curtains")
+minigame_tracker = NodePath("../MiniGameTracker")
 
 [node name="worldboundary" type="Node2D" parent="." unique_id=1162189176]
 visible = false
@@ -94,5 +104,27 @@ metadata/_edit_lock_ = true
 [node name="CRT" parent="CanvasLayer" unique_id=719073563 instance=ExtResource("6_4arlo")]
 
 [node name="Control" parent="CanvasLayer" unique_id=233616670 instance=ExtResource("1_8cy1c")]
+
+[node name="MiniGameTracker" parent="." unique_id=914605974 instance=ExtResource("11_cl5pl")]
+script = ExtResource("12_wipld")
+game_icons = {
+"bullet": ExtResource("14_4tcif"),
+"maze": ExtResource("13_6vnka"),
+"quiz": ExtResource("15_0wqvk"),
+"scary": ExtResource("16_83ar3")
+}
+
+[node name="UiText" type="Control" parent="." unique_id=689649943]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_wipld")
+
+[node name="Label" type="Label" parent="UiText" unique_id=1536777149]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 18.0
+label_settings = SubResource("LabelSettings_1vda6")
 
 [connection signal="lever_pulled" from="Lever" to="Wheel" method="_on_lever_lever_pulled"]

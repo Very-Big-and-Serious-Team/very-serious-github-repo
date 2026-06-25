@@ -17,6 +17,8 @@ var spinner_starting_positions = [
 var spinner_starting_position_idx = 0;
 var target_scene = ""
 
+var minigame_history = []
+
 func _ready() -> void:
 	fade_out_done.connect(_do_level_change)
 

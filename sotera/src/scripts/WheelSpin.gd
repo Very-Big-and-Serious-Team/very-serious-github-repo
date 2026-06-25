@@ -32,6 +32,7 @@ var single_value_height_in_texture = 1.0 / items.size();
 var value_idx = 2;
 
 @export var curtains: CurtainSystem
+@export var minigame_tracker: MiniGameTracker
 
 func _ready() -> void:
 	offset = Events.get_spinner_start_offset()
@@ -96,7 +97,13 @@ func check_if_curtains_are_closed() -> void:
 	SoundPool.play_sound(SoundPool.AUDIENCE_CHEER)
 	
 func stop_spinning() -> void:
-	if state == WHEELSTATE.SPINNING: start_closing_curtains()
+	if state == WHEELSTATE.SPINNING: 
+		var winning_game = items[value_idx]
+		
+		if minigame_tracker:
+			minigame_tracker.add_minigame(winning_game)
+		
+		start_closing_curtains()	
 
 
 		
