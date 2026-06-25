@@ -38,9 +38,5 @@ func disable()->void:
 
 func _on_hit_area_entered(body: Node2D) -> void:
 	if state!=BULLETSTATE.DISABLED:
-		if body is BulletHellEnemy:
-			if !body.isDisabled():
-				body.takeDamage(damage)
-				disable()
-		elif body.is_in_group("Background"):
+		if body.is_in_group("Background"):
 			disable()

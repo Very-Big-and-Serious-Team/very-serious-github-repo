@@ -103,6 +103,7 @@ distance = 8.898792
 [node name="BulletHellCharacter" parent="." unique_id=770224643 instance=ExtResource("1_mouw8")]
 position = Vector2(948, 563)
 floor_stop_on_slope = false
+speed = null
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2056125960]
 visible = false
