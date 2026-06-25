@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 	$WheelValue.text = str(items[value_idx])
 
 func start_spinning():
-	if state != WHEELSTATE.COMPLETE:
+	if state == WHEELSTATE.IDLE:
 		state = WHEELSTATE.SPINNING
 		spin_speed = min_speed # RandUtils.randf_range(min_speed, max_speed)
 		spin_time = min_time # RandUtils.randf_range(min_time, max_time)
