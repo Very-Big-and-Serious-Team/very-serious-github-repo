@@ -18,12 +18,6 @@ size = Vector2(1920.5, 199.5)
 
 [node name="Root" type="Node2D" unique_id=953526698]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=619906068]
-
-[node name="Control" parent="CanvasLayer" unique_id=233616670 instance=ExtResource("1_8cy1c")]
-
-[node name="CRT" parent="CanvasLayer" unique_id=719073563 instance=ExtResource("6_4arlo")]
-
 [node name="Stage" type="Sprite2D" parent="." unique_id=969645194]
 position = Vector2(960.0001, 544)
 scale = Vector2(6.0027785, 6.0027785)
@@ -91,3 +85,9 @@ position = Vector2(1812, 814)
 position = Vector2(960.00006, 544)
 scale = Vector2(6, 6)
 texture = ExtResource("7_4fco3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=619906068]
+
+[node name="CRT" parent="CanvasLayer" unique_id=719073563 instance=ExtResource("6_4arlo")]
+
+[node name="Control" parent="CanvasLayer" unique_id=233616670 instance=ExtResource("1_8cy1c")]
