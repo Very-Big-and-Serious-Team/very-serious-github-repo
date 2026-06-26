@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ca7ugi6emcwu" path="res://src/scripts/final_boss.gd" id="1_6ag57"]
 [ext_resource type="Script" uid="uid://d2qode13dvwob" path="res://src/scripts/question.gd" id="2_k525x"]
 [ext_resource type="PackedScene" uid="uid://cfpfhc2bmrb7b" path="res://assets/prefabs/gui.tscn" id="3_loflm"]
+[ext_resource type="Texture2D" uid="uid://dw07aj3turlb" path="res://assets/raw/MC_platformer_spritesheet (2).png" id="5_jil5c"]
+[ext_resource type="Texture2D" uid="uid://b4meiyl3qtq4d" path="res://assets/raw/boss_hair_anim5-ezgif.com-gif-to-sprite-converter (1).png" id="5_vkukm"]
 
 [sub_resource type="Resource" id="Resource_k525x"]
 script = ExtResource("2_k525x")
@@ -105,6 +107,120 @@ metadata/_custom_type_script = "uid://d2qode13dvwob"
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loflm"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkukm"]
+atlas = ExtResource("5_jil5c")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xf35"]
+atlas = ExtResource("5_jil5c")
+region = Rect2(100, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3etcb"]
+atlas = ExtResource("5_jil5c")
+region = Rect2(150, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hrp2"]
+atlas = ExtResource("5_jil5c")
+region = Rect2(200, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6exl"]
+atlas = ExtResource("5_jil5c")
+region = Rect2(250, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klscq"]
+atlas = ExtResource("5_jil5c")
+region = Rect2(300, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05l7r"]
+atlas = ExtResource("5_jil5c")
+region = Rect2(350, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mha1t"]
+atlas = ExtResource("5_jil5c")
+region = Rect2(400, 50, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oag77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkukm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xf35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3etcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hrp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6exl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klscq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05l7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mha1t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4jb7"]
+atlas = ExtResource("5_vkukm")
+region = Rect2(0, 0, 1296, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkmi6"]
+atlas = ExtResource("5_vkukm")
+region = Rect2(1296, 0, 1296, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v7t1"]
+atlas = ExtResource("5_vkukm")
+region = Rect2(2592, 0, 1296, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u3g7"]
+atlas = ExtResource("5_vkukm")
+region = Rect2(3888, 0, 1296, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct20v"]
+atlas = ExtResource("5_vkukm")
+region = Rect2(5184, 0, 1296, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgssc"]
+atlas = ExtResource("5_vkukm")
+region = Rect2(0, 1080, 1296, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_syr0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4jb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkmi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v7t1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u3g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct20v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgssc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oag77"]
 bg_color = Color(0.6906835, 0.15478319, 0, 1)
 corner_radius_top_left = 8
@@ -126,6 +242,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+layout_direction = 2
 script = ExtResource("1_6ag57")
 boss_max_health = 7
 player_damage = 1
@@ -140,42 +257,36 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.41406584, 0.41406578, 0.41406578, 1)
 
-[node name="Options" type="HBoxContainer" parent="." unique_id=2003478243]
+[node name="Control" parent="." unique_id=233616670 instance=ExtResource("3_loflm")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -204.5
-offset_top = -52.0
-offset_right = 204.5
-offset_bottom = 52.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
-layout_direction = 3
+layout_direction = 2
+
+[node name="Hearts" parent="Control" index="0" unique_id=960481075]
+offset_left = 33.43
+offset_right = 362.43
+
+[node name="Contracts" parent="Control" index="1" unique_id=629596135]
+offset_left = 31.0
+offset_right = 181.0
+
+[node name="Options" type="HBoxContainer" parent="." unique_id=2003478243]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 186.0
+offset_top = -52.0
+offset_right = 686.0
+offset_bottom = 52.0
+grow_vertical = 2
 theme_override_constants/separation = 100
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Options" unique_id=1693781074]
-layout_mode = 2
-
-[node name="OptionC" type="Button" parent="Options/VBoxContainer2" unique_id=1841641238]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-layout_direction = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/OptionA")
-focus_neighbor_bottom = NodePath("../OptionD")
-text = "c"
-alignment = 0
-
-[node name="OptionD" type="Button" parent="Options/VBoxContainer2" unique_id=794941133]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-layout_direction = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/OptionB")
-focus_neighbor_top = NodePath("../OptionC")
-text = "d"
-alignment = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Options" unique_id=2066377264]
 layout_mode = 2
@@ -198,34 +309,66 @@ focus_neighbor_right = NodePath("../../VBoxContainer2/OptionD")
 text = "b"
 alignment = 0
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="Options" unique_id=1693781074]
+layout_mode = 2
+
+[node name="OptionC" type="Button" parent="Options/VBoxContainer2" unique_id=1841641238]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+layout_direction = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/OptionA")
+focus_neighbor_bottom = NodePath("../OptionD")
+text = "c"
+alignment = 0
+
+[node name="OptionD" type="Button" parent="Options/VBoxContainer2" unique_id=794941133]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+layout_direction = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/OptionB")
+focus_neighbor_top = NodePath("../OptionC")
+text = "d"
+alignment = 0
+
 [node name="QuestionLabel" type="Label" parent="." unique_id=1699864311]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -9.0
-offset_right = 0.5
-offset_bottom = 9.0
+anchors_preset = -1
+anchor_left = 0.22800002
+anchor_top = 0.397
+anchor_right = 0.22800002
+anchor_bottom = 0.397
+offset_left = -96.76004
+offset_top = -22.76001
+offset_right = 103.23996
+offset_bottom = 27.23999
 grow_horizontal = 2
 grow_vertical = 2
-offset_transform_enabled = true
 offset_transform_position = Vector2(0, -100)
 theme_override_styles/normal = SubResource("StyleBoxFlat_loflm")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1762459651]
+position = Vector2(146, 952)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_oag77")
+autoplay = "default"
+
+[node name="BossAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1480900053]
+position = Vector2(1272, 540)
+sprite_frames = SubResource("SpriteFrames_syr0s")
+autoplay = "default"
 
 [node name="BossHealthBar" type="ProgressBar" parent="." unique_id=1510013361]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -326.0
-offset_right = 326.0
-offset_bottom = 44.0
+offset_left = 146.0
+offset_top = 1015.0
+offset_right = 791.0
+offset_bottom = 1059.0
 grow_horizontal = 2
 layout_direction = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_oag77")
@@ -233,13 +376,4 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_syr0s")
 value = 50.0
 show_percentage = false
 
-[node name="PlayerHealthBar" type="ProgressBar" parent="." unique_id=1775071345]
-layout_mode = 0
-offset_left = 828.0
-offset_top = 1019.0
-offset_right = 1102.0
-offset_bottom = 1041.0
-show_percentage = false
-
-[node name="Control" parent="." unique_id=233616670 instance=ExtResource("3_loflm")]
-layout_mode = 0
+[editable path="Control"]

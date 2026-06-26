@@ -8,7 +8,6 @@ enum Answers {A, B ,C, D}
 @onready var option_d: Button = $Options/VBoxContainer2/OptionD
 @onready var question_label: Label = $QuestionLabel
 @onready var boss_health_bar: ProgressBar = $BossHealthBar
-@onready var player_health_bar: ProgressBar = $PlayerHealthBar
 
 
 @export var boss_max_health: int
