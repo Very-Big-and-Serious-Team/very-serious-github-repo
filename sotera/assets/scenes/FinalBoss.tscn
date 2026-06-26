@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://ca7ugi6emcwu" path="res://src/scripts/final_boss.gd" id="1_6ag57"]
 [ext_resource type="Script" uid="uid://d2qode13dvwob" path="res://src/scripts/question.gd" id="2_k525x"]
 [ext_resource type="PackedScene" uid="uid://cfpfhc2bmrb7b" path="res://assets/prefabs/gui.tscn" id="3_loflm"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Shader" uid="uid://cjwdmao3h210y" path="res://assets/materials/flash.gdshader" id="4_vkukm"]
+[ext_resource type="Texture2D" uid="uid://dw07aj3turlb" path="res://assets/raw/MC_platformer_spritesheet (2).png" id="5_jil5c"]
+[ext_resource type="Texture2D" uid="uid://b4meiyl3qtq4d" path="res://assets/raw/boss_hair_anim5-ezgif.com-gif-to-sprite-converter (1).png" id="5_vkukm"]
+[ext_resource type="Script" uid="uid://0wj45s7kxtvv" path="res://src/scripts/flash_componet.gd" id="7_8xf35"]
+>>>>>>> Stashed changes
 
 [sub_resource type="Resource" id="Resource_k525x"]
 script = ExtResource("2_k525x")
@@ -103,7 +110,12 @@ option_d = "Survival"
 metadata/_custom_type_script = "uid://d2qode13dvwob"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loflm"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jil5c"]
+shader = ExtResource("4_vkukm")
+shader_parameter/flash_enable = false
+shader_parameter/flash_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oag77"]
 bg_color = Color(0.6906835, 0.15478319, 0, 1)
@@ -131,6 +143,7 @@ boss_max_health = 7
 player_damage = 1
 questions = Array[ExtResource("2_k525x")]([SubResource("Resource_k525x"), SubResource("Resource_jil5c"), SubResource("Resource_vkukm"), SubResource("Resource_8xf35"), SubResource("Resource_3etcb"), SubResource("Resource_1hrp2"), SubResource("Resource_u6exl"), SubResource("Resource_klscq"), SubResource("Resource_05l7r"), SubResource("Resource_mha1t")])
 
+<<<<<<< Updated upstream
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1195852189]
 layout_mode = 1
 anchors_preset = 15
@@ -139,6 +152,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.41406584, 0.41406578, 0.41406578, 1)
+=======
+[node name="Control" parent="." unique_id=233616670 instance=ExtResource("3_loflm")]
+layout_mode = 1
+layout_direction = 2
+
+[node name="Hearts" parent="Control" index="0" unique_id=960481075]
+offset_left = 33.43
+offset_right = 362.43
+
+[node name="Contracts" parent="Control" index="1" unique_id=629596135]
+offset_left = 31.0
+offset_right = 181.0
+>>>>>>> Stashed changes
 
 [node name="Options" type="HBoxContainer" parent="." unique_id=2003478243]
 layout_mode = 1
@@ -214,10 +240,26 @@ grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, -100)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_loflm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+<<<<<<< Updated upstream
+=======
+[node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1762459651]
+material = SubResource("ShaderMaterial_jil5c")
+position = Vector2(150, 930)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_oag77")
+autoplay = "default"
+
+[node name="BossAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1480900053]
+position = Vector2(1272, 540)
+sprite_frames = SubResource("SpriteFrames_syr0s")
+autoplay = "default"
+
+>>>>>>> Stashed changes
 [node name="BossHealthBar" type="ProgressBar" parent="." unique_id=1510013361]
 layout_mode = 1
 anchors_preset = 5
@@ -233,6 +275,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_syr0s")
 value = 50.0
 show_percentage = false
 
+<<<<<<< Updated upstream
 [node name="PlayerHealthBar" type="ProgressBar" parent="." unique_id=1775071345]
 layout_mode = 0
 offset_left = 828.0
@@ -243,3 +286,16 @@ show_percentage = false
 
 [node name="Control" parent="." unique_id=233616670 instance=ExtResource("3_loflm")]
 layout_mode = 0
+=======
+[node name="PlayerFlashComponent" type="Node" parent="." unique_id=1594048353 node_paths=PackedStringArray("sprite_2d")]
+script = ExtResource("7_8xf35")
+sprite_2d = NodePath("../PlayerAnimatedSprite")
+metadata/_custom_type_script = "uid://0wj45s7kxtvv"
+
+[node name="BossFlashComponent" type="Node" parent="." unique_id=424091372 node_paths=PackedStringArray("sprite_2d")]
+script = ExtResource("7_8xf35")
+sprite_2d = NodePath("../BossAnimatedSprite")
+metadata/_custom_type_script = "uid://0wj45s7kxtvv"
+
+[editable path="Control"]
+>>>>>>> Stashed changes
