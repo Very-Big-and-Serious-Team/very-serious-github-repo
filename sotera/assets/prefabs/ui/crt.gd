@@ -19,18 +19,14 @@ func _process(delta: float) -> void:
 	crt_motion.update(delta)
 
 func fade_out() -> void:
-	# Fade to black
 	animation_player.play("fade_to_black")
 	# Wait until screen is black
 	await animation_player.animation_finished
 	Events.fade_out_done.emit()
 
 func fade_in() -> void:
-	# Fade to black
-	print("fade in start")
 	animation_player.play_backwards("fade_to_black")
 	await animation_player.animation_finished
-	print("fade in done")
 
 func load_screen() -> void:
 	# Show black screen

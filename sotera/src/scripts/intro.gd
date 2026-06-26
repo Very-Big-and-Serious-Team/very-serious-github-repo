@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var ui_text = $"UiText"
-@onready var steven = $"Steven/AnimatedSprite2D"
 @onready var curtain_system = $"Curtains"
 
 @export var target_scene: String
