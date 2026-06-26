@@ -5,9 +5,13 @@ signal level_change_enter
 signal fade_out_done
 signal fade_in_done
 signal game_over
+signal play_loading_screen
+signal stop_loading_screen
 
 signal collect_contract
-signal loose_life
+signal lose_life
+
+var scene_is_loading = false
 
 var spinner_starting_positions = [
 	0.09814815386375, # Standard maze
@@ -28,7 +32,21 @@ func change_level(scene:String):
 
 func _do_level_change():
 	get_tree().change_scene_to_file(target_scene)
-	level_change_enter.emit()
+	# Let the scene process before entering scene
+	ResourceLoader.load_threaded_request(target_scene)
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	scene_is_loading = true
+
+func _process(_delta:float) -> void:
+	# Check current loading state
+	if scene_is_loading:
+		var loading_state = ResourceLoader.load_threaded_get_status(target_scene)
+		play_loading_screen.emit()
+		if loading_state:
+			scene_is_loading = false
+			level_change_enter.emit()
+	else:
+		stop_loading_screen.emit()
 
 # Spinner related global state management
 func increase_spinner_starting_positoin():

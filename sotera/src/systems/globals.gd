@@ -1,17 +1,17 @@
 extends Node
 
 var Total_contracts = 0
-var Lives = 3
+var Lives = 4
 
 func _ready() -> void:
 	Events.collect_contract.connect(increment_contracts)
-	Events.loose_life.connect(take_damage)
+	Events.lose_life.connect(take_damage)
 
 func take_damage():
 	Lives -= 1
 	if Lives == 0:
-		# Game Over. maybe do jump scare sceen then fade to black
-		pass
+		SoundPool.play_sound(SoundPool.MINIGAME_FAIL)
+		Events.change_level("res://assets/scenes/FortuneWheelScene.tscn")
 
 func increment_contracts():
 	Total_contracts += 1

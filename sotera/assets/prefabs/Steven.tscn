@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://m03c8gghqx32"]
 
 [ext_resource type="Texture2D" uid="uid://bdngkaf23ubev" path="res://assets/raw/Steven Spin.png" id="1_eybjq"]
-[ext_resource type="Script" uid="uid://bcijj14jimlhi" path="res://src/scripts/steven.gd" id="1_mo7w4"]
 [ext_resource type="Texture2D" uid="uid://ysbt6dg773mm" path="res://assets/images/shadow.tres" id="2_t44wf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo7w4"]
@@ -136,8 +135,7 @@ animations = [{
 radius = 17.564169
 
 [node name="Steven" type="StaticBody2D" unique_id=1346860183]
-scale = Vector2(4, 4)
-script = ExtResource("1_mo7w4")
+scale = Vector2(5, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1890397098]
 position = Vector2(-0.5, -0.24999619)

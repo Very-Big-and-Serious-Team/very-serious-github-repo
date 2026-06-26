@@ -65,11 +65,6 @@ func _process(delta: float) -> void:
 	$WheelTexture.material.set_shader_parameter("offset", offset);
 	$WheelValue.text = str(items[value_idx])
 
-func _input(event):
-	if event.is_action_pressed("interact"):
-		start_spinning()
-		SoundPool.play_sound(SoundPool.LEVER_PULL)
-
 func start_spinning():
 	if state == WHEELSTATE.IDLE:
 		state = WHEELSTATE.SPINNING
@@ -93,8 +88,6 @@ func check_if_curtains_are_closed() -> void:
 	Events.change_level(itemSceneMap[str(items[value_idx])])
 	
 	state = WHEELSTATE.COMPLETE
-	
-	SoundPool.play_sound(SoundPool.AUDIENCE_CHEER)
 	
 func stop_spinning() -> void:
 	if state == WHEELSTATE.SPINNING: 

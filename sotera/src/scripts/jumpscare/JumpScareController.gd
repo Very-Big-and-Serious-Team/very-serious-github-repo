@@ -17,6 +17,7 @@ var _state_animation_link: Dictionary[JumpscareType, RangeTrack] = {
 signal jumpscare_finished
 
 @onready var anime_state: SpineAnimationState = get_animation_state()
+@onready var voice: AudioStreamPlayer2D = $Voice
 
 var _state = JumpscareControllerState.HIDDEN
 

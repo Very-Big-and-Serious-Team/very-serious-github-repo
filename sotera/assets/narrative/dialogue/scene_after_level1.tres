@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DialogueJSON" format=3 uid="uid://ru8pr85ijjpy"]
 
-[ext_resource type="Script" uid="uid://bd6vca075g71m" path="res://src/scripts/Dialogues/Dialogue_JSON.gd" id="1_ony23"]
+[ext_resource type="Script" uid="uid://bd6vca075g71m" path="res://assets/prefabs/ui/Dialogue_JSON.gd" id="1_ony23"]
 
 [resource]
 script = ExtResource("1_ony23")

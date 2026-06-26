@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dgsjlqp3a2lar"]
 
+[ext_resource type="Script" uid="uid://bk877nku0qtmv" path="res://src/scripts/maze/standard_maze.gd" id="1_eytmt"]
 [ext_resource type="PackedScene" uid="uid://bcnlbtdiicag" path="res://assets/prefabs/gui.tscn" id="1_gveds"]
 [ext_resource type="PackedScene" uid="uid://b830mwodbpleq" path="res://assets/prefabs/player.tscn" id="1_v6fnw"]
 [ext_resource type="PackedScene" uid="uid://qxxqamx1koeu" path="res://assets/prefabs/ui/CRT.tscn" id="2_olgeh"]
@@ -172,6 +173,7 @@ pattern_1 = SubResource("TileMapPattern_gveds")
 pattern_2 = SubResource("TileMapPattern_eytmt")
 
 [node name="StandardMaze" type="Node2D" unique_id=1981291008]
+script = ExtResource("1_eytmt")
 
 [node name="Pixel_Scaler" parent="." unique_id=443437695 instance=ExtResource("4_o565x")]
 
