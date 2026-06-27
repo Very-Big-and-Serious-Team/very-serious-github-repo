@@ -78,8 +78,10 @@ func trigger_jumpscare():
 	await static_anim.animation_finished
 	
 	# Damage
-	Globals.take_damage()
-	
+	Events.lose_life.emit()
+	if Globals.Lives <= 0:
+		return
+		
 	# Reset player state and level
 	player.visible = true
 	player.process_mode = Node.PROCESS_MODE_INHERIT

@@ -107,5 +107,6 @@ metadata/_edit_lock_ = true
 
 [node name="VisualTimerAnim" type="AnimationPlayer" parent="." unique_id=328224295]
 libraries/ = SubResource("AnimationLibrary_hbjed")
+speed_scale = 4.0
 
 [connection signal="timeout" from="ScaryMazeLv1/AmbianceSoundTimer" to="ScaryMazeLv1" method="_on_ambiance_sound_timer_timeout"]
