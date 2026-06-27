@@ -165,11 +165,11 @@ func start_next_dialog() -> void:
 		on_start_dialogue(dialogs, 100)
 		speech_started.emit()
 	elif Globals.Total_contracts == 2:
-		var dialogs = load("res://assets/narrative/dialogue/one_contract.tres")
+		var dialogs = load("res://assets/narrative/dialogue/two_contract.tres")
 		on_start_dialogue(dialogs, 100)
 		speech_started.emit()
 	elif Globals.Total_contracts == 3:
-		var dialogs = load("res://assets/narrative/dialogue/one_contract.tres")
+		var dialogs = load("res://assets/narrative/dialogue/boss_intro.tres")
 		on_start_dialogue(dialogs, 100)
 		speech_started.emit()
 		

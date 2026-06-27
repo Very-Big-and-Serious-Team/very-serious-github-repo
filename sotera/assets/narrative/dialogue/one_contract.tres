@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_i7boa")
-dialogue_lines = Array[String](["One Contract?!", "HA! It'll take more than that to earn your soul back", "How about you go for another spin?"])
+dialogue_lines = Array[String](["ONE Contract?!", "HA! It'll take more than that to earn your soul back", "Let's see her go for another spin?"])
 metadata/_custom_type_script = "uid://bd6vca075g71m"
