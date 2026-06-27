@@ -92,9 +92,9 @@ func start_game_over() -> void:
 	
 	dialogue.on_stop_dialogue()
 	crt.dark_flick(max_time)
-	steve.visible = false
-	wheel.visible = false
-	lever.visible = false
+	steve.queue_free()
+	wheel.queue_free()
+	lever.queue_free()
 	gui.visible = false
 	game_over.emit()
 	
