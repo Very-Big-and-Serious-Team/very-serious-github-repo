@@ -73,7 +73,12 @@ func display_question() -> void:
 
 func move_to_next_question() -> void:
 	if question_index >= num_of_questions -1:
+		# Wuestions loop when they run out
+		questions.shuffle()
+		question_index = 0
+		display_question()
 		return
+		
 	question_index += 1
 	display_question()
 	#SoundPool.play_sound(SoundPool.UI_SOMETHING...?)
@@ -102,6 +107,8 @@ func on_boss_death() -> void:
 	SoundPool.play_sound(SoundPool.BOSS_DEATH)
 	$Curtains.show()
 	$Curtains.close_full()
+	
+	await $Curtains.on_close
 	$"The end".show()
 
 func on_player_death() -> void:
