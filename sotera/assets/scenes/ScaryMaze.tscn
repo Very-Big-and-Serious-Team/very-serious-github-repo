@@ -9,11 +9,49 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_owkrm"]
 distance = 1.9999924
 
+[sub_resource type="Animation" id="Animation_hbjed"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player2/PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3wkap"]
+resource_name = "gradual_dim"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player2/PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.0333333, 25, 29.46667, 29.56667, 29.66667, 29.766668, 29.866669, 29.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 0, 0, 0, 0, 0, 0),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.9999967, 0.50892127, 0.5205346, 1), Color(0.9999744, 0.34201178, 0.3984138, 1), Color(0, 0, 0, 1), Color(0.9999744, 0.34201178, 0.3984138, 1), Color(0, 0, 0, 1), Color(0.9999744, 0.34201178, 0.3984138, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hbjed"]
+_data = {
+&"RESET": SubResource("Animation_hbjed"),
+&"gradual_dim": SubResource("Animation_3wkap")
+}
+
 [node name="ScaryMaze" type="Node2D" unique_id=1149450057]
 
-[node name="ScaryMazeLv1" parent="." unique_id=631495778 node_paths=PackedStringArray("point_light", "darkness") instance=ExtResource("1_owkrm")]
+[node name="ScaryMazeLv1" parent="." unique_id=631495778 node_paths=PackedStringArray("point_light", "darkness", "visual_timer_anim") instance=ExtResource("1_owkrm")]
 point_light = NodePath("../Player2/PointLight2D")
 darkness = NodePath("../CanvasModulate")
+visual_timer_anim = NodePath("../VisualTimerAnim")
 
 [node name="AmbianceSoundTimer" type="Timer" parent="ScaryMazeLv1" unique_id=2068793606]
 
@@ -66,5 +104,8 @@ texture_scale = 1.2
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player2" unique_id=1338842814]
+
+[node name="VisualTimerAnim" type="AnimationPlayer" parent="." unique_id=328224295]
+libraries/ = SubResource("AnimationLibrary_hbjed")
 
 [connection signal="timeout" from="ScaryMazeLv1/AmbianceSoundTimer" to="ScaryMazeLv1" method="_on_ambiance_sound_timer_timeout"]
